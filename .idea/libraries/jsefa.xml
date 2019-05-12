@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="jsefa">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../jsefa.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
