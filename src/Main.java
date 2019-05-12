@@ -13,7 +13,10 @@ public class Main {
             socket = new Socket("localhost", 2038);
             pitcher = new Pitcher(socket);
             System.out.println("Соединение успешно установленно!");
-        } catch (IOException e){System.err.println("Не удалось установить соединение с сервером :(");}
+        } catch (IOException e){
+            System.err.println("Не удалось установить соединение с сервером :(");
+            System.exit(-1);
+        }
 
         try {
             while (true) {
@@ -31,15 +34,12 @@ public class Main {
 
                     input = scanner.nextLine();
                     if (input.equals("overwrite")){
-                        assert pitcher != null;
                         pitcher.pitch(input);
                     }
                     if (input.equals("save")){
-                        assert pitcher != null;
                         pitcher.complexPitch(input);
                     }
                     if (input.equals("saveAll")){
-                        assert pitcher != null;
                         pitcher.pitch("overwrite");
                         pitcher.complexPitch("save");
                     }
@@ -52,7 +52,6 @@ public class Main {
 
                     input = scanner.nextLine();
                     if (input.equals("quitAll")){
-                        assert pitcher != null;
                         pitcher.pitch(input);
                     }
                     if (input.contains("quit")){
@@ -82,13 +81,11 @@ public class Main {
                         (input.equals("remove_last")) || (input.equals("start")) ||
                         (input.contains(" "))){
                     isCommand = true;
-                    assert pitcher != null;
                     pitcher.pitch(input);
                 }
 
                 if (input.equals("import")){
                     isCommand = true;
-                    assert pitcher != null;
                     pitcher.importPitch(input);
                 }
 
@@ -97,12 +94,13 @@ public class Main {
                     System.out.println("Введите \"help\" чтобы получить список команд");
                 }
             }
-            assert socket != null;
-            assert pitcher != null;
             pitcher.closeAll();
             scanner.close();
             socket.close();
-        } catch (IOException e){e.printStackTrace();}
+        } catch (IOException e){
+            e.printStackTrace();
+            System.exit(-2);
+        }
     }
 }
 //++

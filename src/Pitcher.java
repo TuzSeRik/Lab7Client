@@ -14,8 +14,14 @@ class Pitcher {
             fromFile = new FileReader("collectionStorage.csv");
             toFile = new FileWriter("collectionStorage.csv");
         }
-        catch (FileNotFoundException e){System.err.println("Фаил не был найден!");}
-        catch (IOException e){e.printStackTrace();}
+        catch (FileNotFoundException e){
+            System.err.println("Фаил не был найден!");
+            System.exit(-3);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+            System.exit(-4);
+        }
     }
 
 
