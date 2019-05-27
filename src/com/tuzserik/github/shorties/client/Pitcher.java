@@ -1,3 +1,5 @@
+package com.tuzserik.github.shorties.client;
+
 import java.io.*;
 import java.net.Socket;
 
@@ -11,8 +13,8 @@ class Pitcher {
         from = new ObjectInputStream(socket.getInputStream());
         to = new ObjectOutputStream(socket.getOutputStream());
         try {
-            fromFile = new FileReader("collectionStorage.csv");
-            toFile = new FileWriter("collectionStorage.csv");
+            fromFile = new FileReader("com/tuzserik/github/shorties/client/collectionStorage.csv");
+            toFile = new FileWriter("com/tuzserik/github/shorties/client/collectionStorage.csv");
         }
         catch (FileNotFoundException e){
             System.err.println("Фаил не был найден!");

@@ -1,3 +1,5 @@
+package com.tuzserik.github.shorties.client;
+
 import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
@@ -69,7 +71,7 @@ public class Main {
                     System.out.println("start");
                     System.out.println("add <object>");
                     System.out.println("remove <object>");
-                    System.out.println("add_if_max <object>");
+//                    System.out.println("add_if_max <object>");
                     System.out.println("remove_last");
                     System.out.println("show");
                     System.out.println("info");
